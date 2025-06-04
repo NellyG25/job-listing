@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KYC Form</title>
+   <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+      <header>
+            <div id="navbar" class="obj-width">
+                <a href="index.html"> <img class="logo" src="images/recruit.png"></a>
+                <ul id="menu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="jobs/job.html">BROWSE JOBS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><button id="w-btn">JOIN</button></li>
+                </ul>
+
+                <i id="bar" class='bx bx-menu'></i>
+            </div>
+         </header>
+<section class="kyc obj-width sec-space extra-space">
+
+<form id="kyc-form" method="POST" action="send_email.php" enctype="multipart/form-data">
+    <h2>Background Check Authorization Form</h2>
+
+    <label for="fullName">Full Name *</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="dob">Date of Birth *</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="gender">Gender *</label>
+    <select id="gender" name="gender" required>
+      <option value="">Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="nationality">Nationality *</label>
+    <input type="text" id="nationality" name="nationality" required>
+
+    <label for="phone">Phone Number *</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="address">Residential Address *</label>
+    <textarea id="address" name="address" rows="3" required></textarea>
+
+    <label for="idType">ID Type *</label>
+    <select id="idType" name="idType" required>
+      <option value="">Select ID Type</option>
+      <option value="passport">International Passport</option>
+      <option value="drivers_license">Driver’s License</option>
+      <option value="nin">National ID (NIN)</option>
+      <option value="voter_id">Voter’s Card</option>
+    </select>
+
+    <label for="idNumber">ID Number *</label>
+    <input type="text" id="idNumber" name="idNumber" required>
+
+    <div class="id-upload-boxes">
+      <div class="id-box">
+        <label for="idFront">Upload ID (Front) *</label>
+        <input type="file" id="idFront" name="idFront" accept="image/*,.pdf" required>
+      </div>
+
+      <div class="id-box">
+        <label for="idBack">Upload ID (Back) *</label>
+        <input type="file" id="idBack" name="idBack" accept="image/*,.pdf" required>
+      </div>
+    </div>
+
+    <div class="id-selfie">
+      <label for="selfieUpload">Upload Recent Passport Photo or Selfie *</label>
+      <input type="file" id="selfieUpload" name="selfieUpload" accept="image/*" required>
+    </div>
+
+    <!-- Background Check Fields -->
+    <h3 style="margin-top: 30px;">Background Check Information</h3>
+
+    <label for="prevAddress">Previous Address (last 5 years)</label>
+    <textarea id="prevAddress" name="prevAddress" rows="2"></textarea>
+
+    <label for="employer">Most Recent Employer</label>
+    <input type="text" id="employer" name="employer">
+
+    <label for="position">Job Position</label>
+    <input type="text" id="position" name="position">
+
+    <label for="employerPhone">Employer Phone</label>
+    <input type="tel" id="employerPhone" name="employerPhone">
+
+    <label>
+      <input type="checkbox" name="authorize" required>
+      I authorize the organization to conduct a background check including verification of my personal, employment, and criminal history.
+    </label>
+
+    <label for="signature">Digital Signature *</label>
+    <input type="text" id="signature" name="signature" required>
+
+    <label for="dateSigned">Date *</label>
+    <input type="date" id="dateSigned" name="dateSigned" required>
+
+    <input type="submit" id="s-btn" value="Submit"/>
+
+    <!-- Modal for response -->
+    <div class="modal fade" id="kycResponseModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center p-4" id="kycModalMessage"></div>
+          <div class="modal-footer">
+            <input type="button" id="m-btn" value="OK" class="btn btn-primary" data-bs-dismiss="modal">
+          </div>
+        </div>
+      </div>
+    </div>
+
+</form>
+</section>
+
+
+<!-- Bootstrap JS CDN (ensure this is at the bottom of your page) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<footer class="footer">
+            <div class="obj-width">
+                <div class="top">
+                    <div>
+                        <img class="logo" src="images/recruit.png" alt="">
+                        <p>Get your desired job</p>
+                        
+                    </div>
+                    <div > 
+                        <a href=""><i class='bx bxl-facebook-square' ></i></a>
+                        <a href=""><i class='bx bxl-twitter'></i></a>
+                    </div>
+                </div>
+                <div class="bottom">
+                        <div>
+                            <h3>Project</h3>
+                            <a href="#">Changelog</a>
+                            <a href="#">Status</a>
+                            <a href="#">License</a>
+                            <a href="#">All Versiob</a>
+                        </div>
+                        <div>
+                            <h3>Community</h3>
+                            <a href="#">Changelog</a>
+                            <a href="#">Status</a>
+                            <a href="#">License</a>
+                            <a href="#">All Versiob</a>
+                        </div>
+                        <div>
+                            <h3>Help</h3>
+                            <a href="#">Changelog</a>
+                            <a href="#">Status</a>
+                            <a href="#">License</a>
+                            <a href="#">All Versiob</a>
+                        </div>
+                        <div>
+                            <h3>Others</h3>
+                            <a href="#">Changelog</a>
+                            <a href="#">Status</a>
+                            <a href="#">License</a>
+                            <a href="#">All Versiob</a>
+                        </div>
+                    </div>
+            </div>
+
+           </footer>
+
+<script src="kyc.js"></script>
+<script src="toggle.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
